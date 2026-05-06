@@ -36,22 +36,56 @@ async function sendComment() {
 
 const commentList = document.getElementById('commentList')
 
+let allComments = []
+let showAll = false
+
 db.collection('comments')
   .orderBy('createdAt', 'desc')
   .onSnapshot((snapshot) => {
 
-    commentList.innerHTML = ''
+    allComments = []
 
     snapshot.forEach((doc) => {
+      allComments.push(doc.data())
+    })
 
-      const data = doc.data()
+    renderComments()
 
-      commentList.innerHTML += `
+  })
+
+function renderComments() {
+
+  commentList.innerHTML = ''
+
+  const commentsToShow = showAll
+    ? allComments
+    : allComments.slice(0, 5)
+
+  commentsToShow.forEach((data) => {
+
+    commentList.innerHTML += `
       <div class="comment-item">
         <h4>${data.name}</h4>
         <p>${data.message}</p>
       </div>
     `
-    })
-
   })
+
+  if (allComments.length > 5) {
+
+    commentList.innerHTML += `
+      <button class="btn-primary" onclick="toggleComments()">
+        ${showAll ? 'Tampilkan Sedikit' : 'Lihat Semua'}
+      </button>
+    `
+  }
+
+}
+
+function toggleComments() {
+
+  showAll = !showAll
+
+  renderComments()
+
+}
