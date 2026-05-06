@@ -206,14 +206,14 @@ img {
 }
 
 .comment-item {
-  background: rgba(255, 255, 255, .08);
+  background: rgb(255 255 255 / 38%);
   padding: 20px;
   border-radius: 20px;
   text-align: left;
 }
 
 .comment-item h4 {
-  color: rgb(255 219 113);
+  color: #062d47;
   margin-bottom: 10px;
 }
 
