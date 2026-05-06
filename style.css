@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #84572f;
+  overflow-x: hidden;
+  background:
+    /* linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), */
+    url('assets/img/bg-khitan.jpg') center/cover fixed;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.greeting-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background:
+    /* linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), */
+    url('assets/img/hero.jpg') center/cover;
+}
+
+.greeting-content {
+  max-width: 700px;
+  background:
+    linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55));
+  padding: 100px;
+  border-radius: 20px;
+}
+
+.greeting-small {
+  margin-bottom: 20px;
+}
+
+.greeting-photo,
+.about-photo,
+.footer-photo {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid rgb(255 219 113);
+  margin: auto;
+}
+
+.greeting-content h1 {
+  margin: 25px 0;
+  font-size: 64px;
+  color: rgb(255 219 113);
+  font-family: 'Playfair Display', serif;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+    url('assets/img/hero.jpg') center/cover;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin: 20px 0;
+  color: 5px solid rgba(255, 191, 0, 0.688);
+  font-family: 'Playfair Display', serif;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  border-bottom: 1px solid burlywood;
+}
+
+.section h2 {
+  font-size: 42px;
+  color: 5px solid rgba(255, 191, 0, 0.688);
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.subtitle {
+  font-size: 20px;
+}
+
+.guest-box {
+  margin-top: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 25px;
+  background: rgb(255 219 113);
+  color: #062d47;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.countdown div {
+  background: rgb(255 255 255 / 38%);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.countdown span {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.card {
+  background: rgb(255 255 255 / 38%);
+  padding: 40px;
+  border-radius: 25px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.gallery img {
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.rekening-box {
+  background: rgb(255 255 255 / 38%);
+  margin: 25px 0px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.qris-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+  background: white;
+  padding: 10px;
+}
+
+.comment-form {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+}
+
+.comment-form textarea {
+  min-height: 150px;
+}
+
+.comment-list {
+  margin-top: 40px;
+  display: grid;
+  gap: 20px;
+}
+
+.comment-item {
+  background: rgba(255, 255, 255, .08);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.comment-item h4 {
+  color: rgb(255 219 113);
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+@media(max-width:768px) {
+
+  .greeting-content h1,
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    width: 95%;
+    margin: auto;
+  }
+
+}
