@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Khitanan</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- GREETING -->
+  <section class="greeting-page" id="greetingPage">
+    <div class="greeting-content">
+      <p class="greeting-small" style="color: white;">Undangan Khitanan</p>
+
+      <img src="assets/img/lukman1.jpeg" class="greeting-photo">
+
+      <h1>Moch. Lukman Irwansyah</h1>
+
+      <div class="guest-box">
+        <p style="color: white;">Kepada Yth.</p>
+        <h3 id="guestName" style="color: white;">Tamu Undangan</h3>
+      </div>
+
+      <button id="openBtn" class="btn-primary">
+        Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main id="mainContent" class="hidden">
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="subtitle" style="color: rgb(255 219 113);">Assalamu'alaikum Wr. Wb.</p>
+
+        <h1 style="color: rgb(255 219 113);">Walimatul Khitan</h1>
+
+        <p style="color: rgb(255 219 113);">
+          Dengan memohon rahmat dan ridho Allah SWT,
+          kami mengundang Bapak/Ibu/Saudara/i
+          untuk hadir di acara khitan putra kami.
+        </p>
+      </div>
+    </section>
+
+    <section class="section about">
+      <img src="assets/img/lukman2.jpeg" class="about-photo">
+
+      <h2>Moch. Lukman Irwansyah</h2>
+
+      <p>
+        Putra dari Bapak Ridwan & Ibu Ira Lestiana
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Menuju Acara</h2>
+
+      <div class="countdown">
+        <div>
+          <span id="days">0</span>
+          <small>Hari</small>
+        </div>
+
+        <div>
+          <span id="hours">0</span>
+          <small>Jam</small>
+        </div>
+
+        <div>
+          <span id="minutes">0</span>
+          <small>Menit</small>
+        </div>
+
+        <div>
+          <span id="seconds">0</span>
+          <small>Detik</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Hari & Tempat</h2>
+
+        <p>Minggu, 17 Mei 2026</p>
+        <p>09:00 WIB - Selesai</p>
+
+        <p>
+          Rumah Kediaman Bapak Ridwan<br>
+          Garut, Jawa Barat
+        </p>
+
+        <a href="https://maps.app.goo.gl/CQbZtJaFm6bqFDSi9" target="_blank" class="btn-primary">
+          Buka Maps
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Gallery</h2>
+
+      <div class="gallery">
+        <img src="assets/img/lkmn1.jpeg">
+        <img src="assets/img/lkmn2.jpeg">
+        <img src="assets/img/lkmn3.jpeg">
+        <img src="assets/img/lkmn4.jpeg">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Kirim Hadiah</h2>
+
+        <p>Doa restu Anda merupakan hadiah terbaik bagi kami.</p>
+
+        <div class="rekening-box">
+          <h3>BANK BRI</h3>
+          <p id="rekening">4173 0102 2205 500</p>
+
+          <button onclick="copyRekening()" class="btn-primary">
+            Copy Rekening
+          </button>
+        </div>
+        <div class="qris-box">
+
+          <h3>QRIS</h3>
+
+          <img src="assets/img/qris-dana.jpeg" alt="QRIS" class="qris-img" height="50px" weidth="50px">
+
+          <p>Scan QRIS untuk kirim hadiah</p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Ucapan & Doa</h2>
+
+      <div class="comment-form">
+        <input type="text" id="name" placeholder="Nama">
+
+        <textarea id="message" placeholder="Tulis ucapan..."></textarea>
+
+        <button onclick="sendComment()" class="btn-primary">
+          Kirim Ucapan
+        </button>
+      </div>
+
+      <div id="commentList" class="comment-list"></div>
+    </section>
+
+    <footer>
+      <img src="assets/img/lukman2.jpeg" class="footer-photo">
+
+      <h2>Terima Kasih</h2>
+
+      <p>Wassalamu'alaikum Wr. Wb.</p>
+    </footer>
+
+  </main>
+
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
